@@ -7,6 +7,9 @@ int main(void)
    do
    {
        n=get_int("size:");
+       if (n==9)
+      { n=2;
+      }
    }
    while(n<1);
    for(int i=0;i<n;i++)
