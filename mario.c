@@ -3,16 +3,16 @@
 
 int main(void)
 {
-   int n;
+      int n;
    do
-   {
+      {
        n=get_int("size:");
    }
-   while(n<1 || n>8);
-   for(int i=0;i<n;i++)
+   while (n<1 || n>8);
+   for (int i=0;i<n;i++)
    {
-       for(int j=0;j<n;j++)
-       {
+       for (int j=0; j<n;j++)
+          {
            if(i+j>=n-1)
            {
                printf("#");
@@ -20,7 +20,7 @@ int main(void)
            else
            {
                printf(" ");
-           }
+                    }
        }
        printf("\n");
    }
