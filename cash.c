@@ -11,11 +11,11 @@ do
      d=get_float("change owed:");
      c=round(d*100);
           }
-     while(c<1);
+     while (c<1);
      printf("%i\n",coin(c));
 }
 int coin(int n)
-{   int co=0;
+{     int co=0;
     while(n>0)
     {
         if(n>=25)
