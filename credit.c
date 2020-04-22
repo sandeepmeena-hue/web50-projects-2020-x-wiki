@@ -75,36 +75,54 @@ void typecard(long a)
 {     
     int u=sumoth(n)+retdi(n);
          if (u%10==0)
-          {
+          {  
               if (noofdi(n)==15)
-              {
-                  printf("AMEX\n");
+              {   for(int i=13;i>0;i--)
+                  {
+                      n=n/10;
+                  } 
+                  if (n==34 || n==37)
+                  {
+                      printf("AMEX\n");
+                      }
+                  else 
+                  {
+                      printf("INVALID\n");
+                  }    
               }
-              else if (noofdi(n)==16)
-              {   for(int i=15;i>0;i--)
+                else if (noofdi(n)==16)
+              {   for(int i=14;i>0;i--)
                   {
                        n=n/10;
                 }
-                  if (n==5)
+                  if (n==51 || n==52 || n==53 || n==54 || n==55)
                   {
                       printf("MASTERCARD\n");
-                        }
-                  else
+                           }
+                  else if (n/10==4)
                   {
                       printf("VISA\n");
-                  }      
+                           }  
+                  else 
+                  {
+                      printf("INVALID\n");
+                             }    
               }
               else if (noofdi(n)==13)
-              {
-                  printf("VISA\n");
-              }
-              else
-              {
-                  printf("INVALID\n");
-              }
-          }
-    else
-    {
-        printf("INVALID\n");
-    }    
+               {   for(int i=12;i>0;i--)
+                   { 
+                        n=n/10;
+                         }
+                  if (n==4)      
+                  {
+                      printf("VISA\n");
+                          }
+                   else
+                   {
+                         printf("INVALID\n");
+                         }
+                   else
+                   {
+                         printf("INVALID\n");
+                          }    
 }
