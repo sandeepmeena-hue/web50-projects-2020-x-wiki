@@ -120,9 +120,11 @@ void typecard(long a)
                    else
                    {
                          printf("INVALID\n");
-                         }
-                   else
-                   {
-                         printf("INVALID\n");
-                          }    
+                         }    
+                 }
 }
+}
+
+
+
+
