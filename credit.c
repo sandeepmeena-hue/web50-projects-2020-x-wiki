@@ -4,7 +4,7 @@
 int noofdi(long x);
 int retdi(long y);
 int sumoth(long z);
-void typecard(void);
+void typecard(long a);
 long n;
 int main(void)
 {
@@ -13,7 +13,7 @@ int main(void)
         n=get_long("Number: ");
     }
     while(n<1);
-    typecard();
+    typecard(n);
     }
 int noofdi(long x)
 {   int r=0;
@@ -71,8 +71,9 @@ int sumoth(long z)
         }       
      } return sum1;
 }
-void typecard(void)
-{     int u=sumoth(n)+retdi(n);
+void typecard(long a)
+{     
+    int u=sumoth(n)+retdi(n);
          if (u%10==0)
           {
               if (noofdi(n)==15)
@@ -80,10 +81,10 @@ void typecard(void)
                   printf("AMEX\n");
               }
               else if (noofdi(n)==16)
-              {   for(int i=noofdi(n);i<0;i--)
+              {   for(int i=15;i>0;i--)
                   {
-                      n=n/10;
-                  }
+                       n=n/10;
+                }
                   if (n==5)
                   {
                       printf("MASTERCARD\n");
