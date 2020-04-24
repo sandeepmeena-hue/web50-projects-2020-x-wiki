@@ -40,7 +40,6 @@ void grade(string x)
     }
     float l=((float)letter/(word+1))*100;
     float s=((float)sentence/(word+1))*100;
-    printf("%f %f\n",l,s);
     int index= round (0.0588*l-0.296*s-15.8);
     if (index<1)
     {
