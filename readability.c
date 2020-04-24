@@ -2,7 +2,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <string.h>
-
+#include <math.h>
 
 void grade(string x);
 
@@ -25,7 +25,7 @@ void grade(string x)
         {
             sentence+=1;
         }
-        else if (x[i]==' ')                                       // counting word 
+        else if (x[i]==' ')                                       // counting word
         {
             word+=1;
         }
@@ -40,7 +40,8 @@ void grade(string x)
     }
     float l=((float)letter/(word+1))*100;
     float s=((float)sentence/(word+1))*100;
-    int index= 0.0588*l-0.296*s-15.8;
+    printf("%f %f\n",l,s);
+    int index= round (0.0588*l-0.296*s-15.8);
     if (index<1)
     {
         printf("Before Grade 1\n");
