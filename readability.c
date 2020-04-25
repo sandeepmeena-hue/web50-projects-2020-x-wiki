@@ -6,12 +6,12 @@
 
 void grade(string x);
 
-int main (void)
- {
-     string s=get_string("Text: ");
-     grade(s);                                       //  calling grade function
+int main(void)
+{
+    string s=get_string("Text: ");
+    grade(s);                                       //  calling grade function
 
- }
+}
  // function to calculate index
 void grade(string x)
 {
