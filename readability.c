@@ -38,9 +38,12 @@ void grade(string x)
             none+=1;                                             // if other case happen other than above
         }
     }
-    float l=((float)letter/(word+1))*100;
-    float s=((float)sentence/(word+1))*100;
-    int index= round (0.0588*l-0.296*s-15.8);
+    float l= (float)letter/(word+1)*100;
+    float s=(float)sentence/(word+1)*100;
+    printf("%i\n",word);
+    printf("%i\n",sentence);
+    printf("%f  %f\n",l,s);
+    int index= round(0.0588*l-0.296*s-15.8);
     if (index<1)
     {
         printf("Before Grade 1\n");
