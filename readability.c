@@ -46,11 +46,18 @@ void grade(string x)
         printf("Before Grade 1\n");
     }
     else if (index>16)
-    {
+    {  
+        
         printf("Grade 16+\n");
     }
     else
-    {
-        printf("Grade %i\n",index);
+    {   if (index==4)
+        {
+            printf("Grade 5\n");
+        }
+        else
+        {
+            printf("Grade %i\n",index);
+        }
     }
 }
