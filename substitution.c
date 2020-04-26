@@ -60,7 +60,7 @@ int main(int argc,string argv[])
 }
 
 void encry(string x,string y)
-{
+{   
     for(int i=0,n=strlen(x);i<n;i++)
     {
         for(int j=0;j<26;j++)
@@ -68,10 +68,10 @@ void encry(string x,string y)
             {    if(x[i]=='a'+j)
                 {
                     x[i]=tolower(y[j]);
-                    break;
+                    break;                  
                 }
             }
-            else if (isupper(x[i]!=0))
+            else if (isupper(x[i])!=0)
             {   if (x[i]=='A'+j)
                  {
                      x[i]=toupper(y[j]);
