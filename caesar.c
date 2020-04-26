@@ -11,6 +11,7 @@ int main(int argc,string argv[])
     if (argc!=2)
     {
         printf("usage: ./caesar key\n");
+        return 1;
     }
     else
     {       int count=0;
@@ -34,6 +35,7 @@ int main(int argc,string argv[])
         else
             {
                 printf("usage: ./caesar key\n");
+                return 1;
             }
     }
 }
@@ -55,7 +57,7 @@ void encmsg(string x,int y)
                x[j]=x[j]+y;
              }
             else
-             {   int k=97+x[j]+y-122;
+             {   int k=x[j]+y-26;
                  while(k>122)
                 {
                    k-=26;
@@ -71,7 +73,7 @@ void encmsg(string x,int y)
              }
             else
              {
-                int l=65+x[j]+y-90;
+                int l=x[j]+y-26;
                 while(l>90)
                 {
                     l-=26;
