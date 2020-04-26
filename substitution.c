@@ -24,7 +24,7 @@ int main(int argc,string argv[])
                           {
                               if (tolower(argv[1][j])==tolower(argv[1][k]))
                               {
-                                  break;
+                                  return 1;
                               }
                               else
                               {
@@ -35,7 +35,7 @@ int main(int argc,string argv[])
                     }
                     else
                     {
-                        break;
+                        return 1;
                     }
                 }
            }
@@ -55,6 +55,7 @@ int main(int argc,string argv[])
         else
         {
             printf("usage: ./substitution key\n");
+            return 1;
         }
 }
 
