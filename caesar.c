@@ -40,7 +40,7 @@ int main(int argc,string argv[])
     }
 }
 
-void encmsg(string x,int y)
+void encmsg(string x,int y)                             // function to rotate the alphabet
 {
     for(int j=0,n=strlen(x);j<n;j++)
     {
@@ -50,7 +50,7 @@ void encmsg(string x,int y)
            }
            else
           {
-            if (isupper(x[j])==0)
+            if (islower(x[j])!=0)
            {
                if (x[j]+y<=122)
              {
@@ -65,7 +65,7 @@ void encmsg(string x,int y)
                 x[j]=k;
              }
            }
-           else if (islower(x[j])==0)
+           else if (isupper(x[j])!=0)
           {
              if(x[j]+y<=90)
              {
