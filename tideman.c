@@ -153,6 +153,7 @@ void add_pairs(void)
                 }
         }
     }
+}
 
 
 // Sort pairs in decreasing order by strength of victory
@@ -170,7 +171,7 @@ void sort_pairs(void)
         int temp=s;
         s=pairs[i].winner;
         pairs[i].winner=temp;
-
+        printf("%i",pairs[i].winner);
     }
 
 }
