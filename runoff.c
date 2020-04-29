@@ -156,7 +156,6 @@ void tabulate(void)
             else
             {
                 candidates[preferences[i][1]].votes+=1;
-                break;
             }
         }
     }
@@ -165,7 +164,7 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    for (int i =0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes>voter_count/2)
         {
