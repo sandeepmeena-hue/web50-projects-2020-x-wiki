@@ -150,7 +150,7 @@ void tabulate(void)
         {
             if (candidates[j].eliminated==false)
             {   
-                    candidates[preferences[i][j]].votes+=1;
+                    candidates[preferences[i][0]].votes+=1;
             }
             else
             {
