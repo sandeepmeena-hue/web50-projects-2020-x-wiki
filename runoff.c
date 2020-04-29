@@ -191,6 +191,7 @@ int find_min(void)
 bool is_tie(int min)
 {
     int count=0;
+    int n=0;
     for (int i = 0;i < candidate_count; i++)
     {   if (candidates[i].eliminated==false)
             {
@@ -201,10 +202,10 @@ bool is_tie(int min)
             }
         else
         {
-            continue;
+            n+=1;
         }
     }
-    if (count==candidate_count)
+    if (count==candidate_count-n)
     {
         return true;
     }
