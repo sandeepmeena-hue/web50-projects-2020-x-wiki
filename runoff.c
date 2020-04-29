@@ -149,7 +149,7 @@ void tabulate(void)
         for (int j = 0;j < candidate_count;j++ )
         {
             if (candidates[j].eliminated==false)
-            {   
+            {
                     candidates[preferences[i][0]].votes+=1;
             }
             else
@@ -192,10 +192,16 @@ bool is_tie(int min)
 {
     int count=0;
     for (int i = 0;i < candidate_count; i++)
-    {
-        if (min==candidates[i].votes)
+    {   if (candidates[i].eliminated==false)
+            {
+                if (min==candidates[i].votes)
+                {
+                   count+=1;
+                }
+            }
+        else
         {
-            count+=1;
+            continue;
         }
     }
     if (count==candidate_count)
