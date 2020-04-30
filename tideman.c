@@ -141,12 +141,14 @@ void add_pairs(void)
                     pairs[pair_count].winner=preferences[i][j];
                     pairs[pair_count].loser=preferences[j][i];
                     pair_count+=1;
+                    printf("pairs[%i]:%i %i\n",pair_count,pairs[pair_count].winner,pairs[pair_count].loser);
                 }
             else if (preferences[i][j]<preferences[j][i])
                 {
-                    pairs[pair_count].winner=preferences[j][i];
-                    pairs[pair_count].loser=preferences[i][j];
+                     pairs[pair_count].winner=preferences[j][i];
+                     pairs[pair_count].loser=preferences[i][j];
                     pair_count+=1;
+                    printf("pairs[%i]:%i %i\n",pair_count,pairs[pair_count].winner,pairs[pair_count].loser);
                 }
             else
                {
@@ -155,6 +157,7 @@ void add_pairs(void)
         }
     }
     printf("%i\n",pair_count);
+    printf("pairs[0]:%i %i\n",pairs[0].winner,pairs[0].loser);
 }
 
 
