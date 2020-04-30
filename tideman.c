@@ -155,18 +155,18 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int s = pairs[0].winner;
+    int s = pairs[0].winner-pairs[0].loser;
     for (int i = 0; i < pair_count; i++)
     {    for (int j = i+1; j < pair_count; j++)
-         {  if (s > pairs[j].winner)
+         {  if (s > pairs[j].winner-pairs[j].loser)
             {
-                s=pairs[j].winner;
+                s=pairs[j].winner-pairs[j].loser;
             }
          }
-        int temp=s;
-        s=pairs[i].winner;
-        pairs[i].winner=temp;
-        printf("%i",pairs[i].winner);
+        int temp =s;
+        s = pairs[i].winner-pairs[i].loser;
+        pairs[i].winner = temp+pairs[i].loser;
+        printf("%i",pairs[i].winner-pairs[i].loser);
     }
 
 }
