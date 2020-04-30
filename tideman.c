@@ -165,7 +165,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int m = pairs[0].winner;
+    int s = pairs[0].winner;
     for (int i = 0; i < pair_count; i++)
     {    for (int j = i+1; j < pair_count; j++)
          {  if (s < pairs[j].winner)
