@@ -121,6 +121,7 @@ void record_preferences(int ranks[])
         for (int j = i+1; j < candidate_count; j++)
           {
               preferences[ranks[i]][ranks[j]]+=1;
+              printf("preferences[%i][%i]:%i\n",ranks[i],ranks[j],preferences[ranks[i]][ranks[j]]);
 
           }
     }
@@ -133,25 +134,27 @@ void add_pairs(void)
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = i+1; j < candidate_count; j++)
-        {
+        {      printf("preferences[%i][%i]:%i\n",i,j,preferences[i][j]);
+               printf("preferences[%i][%i]:%i\n",j,i,preferences[j][i]);
             if (preferences[i][j]>preferences[j][i])
                 {
                     pairs[pair_count].winner=preferences[i][j];
                     pairs[pair_count].loser=preferences[j][i];
                     pair_count+=1;
                 }
-            else if (preferences[i][j]<preferences[i][j])
-                {   
+            else if (preferences[i][j]<preferences[j][i])
+                {
                     pairs[pair_count].winner=preferences[j][i];
                     pairs[pair_count].loser=preferences[i][j];
                     pair_count+=1;
                 }
             else
-            {
-                continue;
-            }
+               {
+                  continue;
+               }
         }
     }
+    printf("%i\n",pair_count);
 }
 
 
@@ -159,18 +162,18 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int s = pairs[0].winner-pairs[0].loser;
+    int s = pairs[0].winner;
     for (int i = 0; i < pair_count; i++)
     {    for (int j = i+1; j < pair_count; j++)
-         {  if (s > pairs[j].winner-pairs[j].loser)
+         {  if (s > pairs[j].winner)
             {
-                s=pairs[j].winner-pairs[j].loser;
+                s=pairs[j].winner;
             }
          }
         int temp =s;
-        s = pairs[i].winner-pairs[i].loser;
-        pairs[i].winner = temp+pairs[i].loser;
-        printf("%i",pairs[i].winner-pairs[i].loser);
+        s = pairs[i].winner;
+        pairs[i].winner = temp;
+        printf("%i",pairs[i].winner);
     }
 
 }
