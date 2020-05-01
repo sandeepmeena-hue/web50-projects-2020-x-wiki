@@ -121,7 +121,6 @@ void record_preferences(int ranks[])
         for (int j = i+1; j < candidate_count; j++)
           {
               preferences[ranks[i]][ranks[j]]+=1;
-              printf("preferences[%i][%i]:%i\n",ranks[i],ranks[j],preferences[ranks[i]][ranks[j]]);
 
           }
     }
@@ -134,21 +133,18 @@ void add_pairs(void)
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = i+1; j < candidate_count; j++)
-        {      printf("preferences[%i][%i]:%i\n",i,j,preferences[i][j]);
-               printf("preferences[%i][%i]:%i\n",j,i,preferences[j][i]);
+        {
             if (preferences[i][j]>preferences[j][i])
                 {
                     pairs[pair_count].winner=i;
                     pairs[pair_count].loser=j;
                     pair_count+=1;
-                    printf("pairs[%i]:%i %i\n",pair_count,pairs[pair_count].winner,pairs[pair_count].loser);
                 }
             else if (preferences[i][j]<preferences[j][i])
                 {
                      pairs[pair_count].winner=j;
                      pairs[pair_count].loser=i;
                     pair_count+=1;
-                    printf("pairs[%i]:%i %i\n",pair_count,pairs[pair_count].winner,pairs[pair_count].loser);
                 }
             else
                {
@@ -156,8 +152,6 @@ void add_pairs(void)
                }
         }
     }
-    printf("%i\n",pair_count);
-    printf("pairs[0]:%i %i\n",pairs[0].winner,pairs[0].loser);
 }
 
 
@@ -165,20 +159,20 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    int s = pairs[0].winner;
+    int n;
+    int m = preferences[pairs[0].winner][pairs[0].loser];
     for (int i = 0; i < pair_count; i++)
-    {    for (int j = i+1; j < pair_count; j++)
-         {  if (s < pairs[j].winner)
+    {   for (int j = i+1; j < pair_count; j++)
+        {   if (m < preferences[pairs[j].winner][pairs[j].loser])
             {
-                s=pairs[j].winner;
+                m=preferences[pairs[j].winner][pairs[j].loser];
+                n = j;
             }
-         }
-        int temp =s;
-        s = pairs[i].winner;
-        pairs[i].winner = temp;
-        printf("%i",pairs[i].winner);
+        }
+        pair temp = pairs[0];
+        pairs[0] = pairs[n];
+        pairs[n] = temp;
     }
-
 }
 
 
@@ -188,7 +182,7 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        
+
     }
 }
 
