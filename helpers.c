@@ -155,9 +155,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             else
-            {   int sumG = 0;
-                int sumR = 0;
-                int sumB = 0;
+            {   unsigned int sumG = 0;
+                unsigned int sumR = 0;
+                unsigned int sumB = 0;
                 for (int s = i-1; s < i+2; s++)
                 {
                     for (int k = j-1; k < j+2; j++)
@@ -167,9 +167,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             sumB+= image[s][k].rgbtBlue;
                     }
                 }
-                image[i][j].rgbtGreen = round (sumG/6);
-                image[i][j].rgbtBlue = round (sumB/6);
-                image[i][j].rgbtRed = round (sumR/6);
+                image[i][j].rgbtGreen = round (sumG/9);
+                image[i][j].rgbtBlue = round (sumB/9);
+                image[i][j].rgbtRed = round (sumR/9);
             }
         }
     }
