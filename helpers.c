@@ -63,35 +63,106 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
-{
-    for (int i = 0; i < height; i++)
+{   for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
             if (((i == 0) || (i == height-1)) && ((j == 0) || (j == width-1)))
-            {   if ((i == 0) && (j == 0))
+            {   int sumG = 0;
+                int sumR = 0;
+                int sumB = 0;
+                int count = 0;
+                if ((i == 0) && (j == 0))
                 {
-                    image[0][0].rgbtGreen = round (( (float) image[0][0].rgbtGreen + image[0][1].rgbtGreen + image[1][0].rgbtGreen + image[1][1].rgbtGreen)/4);
-                    image[0][0].rgbtBlue = round (( (float) image[0][0].rgbtBlue + image[0][1].rgbtBlue + image[1][0].rgbtBlue + image[1][1].rgbtBlue)/4);
-                    image[0][0].rgbtRed = round (( (float) image[0][0].rgbtRed + image[0][1].rgbtRed + image[1][0].rgbtRed + image[1][1].rgbtRed)/4);
+                    for (int s = i; s < 2; s++)
+                    {
+                        for (int k = j; k < 2; k++)
+                        {
+                            if ((s < height) && (k < width))
+                            {
+                                sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                    image[0][0].rgbtGreen = round ((float) sumG/count);
+                    image[0][0].rgbtRed = round ((float) sumR/count);
+                    image[0][0].rgbtBlue = round ((float) sumB/count);
                 }
-                else if ((i == 0) && (i == width-1))
+                else if ((i == 0) && (j == width-1))
                 {
-                    image[0][width-1].rgbtGreen = round (( (float) image[0][width-2].rgbtGreen + image[0][width-1].rgbtGreen + image[1][width-2].rgbtGreen + image[1][width-1].rgbtGreen)/4);
-                    image[0][width-1].rgbtRed = round (( (float) image[0][width-2].rgbtRed + image[0][width-1].rgbtRed + image[1][width-2].rgbtRed + image[1][width-1].rgbtRed)/4);
-                    image[0][width-1].rgbtBlue = round (( (float) image[0][width-2].rgbtBlue + image[0][width-1].rgbtBlue + image[1][width-2].rgbtBlue + image[1][width-1].rgbtBlue)/4);
+                    for (int s = i; s < 2; s++)
+                    {
+                        for (int k = width-2; k < width; k++)
+                        {
+                            if ((s < height) && (k < width))
+                            {
+                                sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                    image[0][width-1].rgbtGreen = round ((float) sumG/count);
+                    image[0][width-1].rgbtRed = round ((float) sumR/count);
+                    image[0][width-1].rgbtBlue = round ((float) sumB/count);
                 }
                 else if ((i == height-1) && (j == 0))
                 {
-                    image[height-1][0].rgbtGreen = round (( (float) image[height-1][0].rgbtGreen + image[height-2][0].rgbtGreen + image[height-2][1].rgbtGreen + image[height-1][1].rgbtGreen)/4);
-                    image[height-1][0].rgbtBlue = round (( (float) image[height-1][0].rgbtBlue + image[height-2][0].rgbtBlue + image[height-2][1].rgbtBlue + image[height-1][1].rgbtBlue)/4);
-                    image[height-1][0].rgbtRed = round (( (float) image[height-1][0].rgbtRed + image[height-2][0].rgbtRed + image[height-2][1].rgbtRed + image[height-1][1].rgbtRed)/4);
+                   for (int s = height-2; s < height; s++)
+                    {
+                        for (int k = 0; k < 2; k++)
+                        {
+                            if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            {
+                                sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                    image[height-1][0].rgbtGreen = round ((float) sumG/count);
+                    image[height-1][0].rgbtRed = round ((float) sumR/count);
+                    image[height-1][0].rgbtBlue = round ((float) sumB/count);
                 }
                 else
                 {
-                    image[height-1][width-1].rgbtBlue = round (( (float) image[height-1][0].rgbtBlue + image[height-2][0].rgbtBlue + image[height-2][1].rgbtBlue + image[height-1][1].rgbtBlue)/4);
-                    image[height-1][width-1].rgbtGreen = round (( (float) image[height-1][0].rgbtGreen + image[height-2][0].rgbtGreen + image[height-2][1].rgbtGreen + image[height-1][1].rgbtGreen)/4);
-                    image[height-1][width-1].rgbtRed = round (( (float) image[height-1][0].rgbtRed + image[height-2][0].rgbtRed + image[height-2][1].rgbtRed + image[height-1][1].rgbtRed)/4);
+                   for (int s = height-2; s < height; s++)
+                    {
+                        for (int k = width-2; k < width; k++)
+                        {
+                            if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            {
+                                sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                    image[height-1][width-1].rgbtGreen = round ((float) sumG/count);
+                    image[height-1][width-1].rgbtRed = round ((float) sumR/count);
+                    image[height-1][width-1].rgbtBlue = round ((float) sumB/count);
                 }
             }
 
@@ -99,71 +170,94 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {   int sumG = 0;
                 int sumR = 0;
                 int sumB = 0;
+                int count = 0;
                 if (i == 0)
                 {
                     for (int s = 0; s<2; s++)
                     {
                         for (int k = j-1; k < j+2; k++)
-                        {
-                             sumG+= image[s][k].rgbtGreen;
-                             sumR+= image[s][k].rgbtRed;
-                             sumB+= image[s][k].rgbtBlue;
+                        {    if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                             {
+                                sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                             }
+                             else
+                             {
+                                 continue;
+                             }
                         }
                     }
-                image[0][j].rgbtGreen = round ( (float) sumG/6);
-                image[0][j].rgbtBlue = round ( (float) sumB/6);
-                image[0][j].rgbtRed = round ( (float) sumR/6);
+                image[0][j].rgbtGreen = round ( (float) sumG/count);
+                image[0][j].rgbtBlue = round ( (float) sumB/count);
+                image[0][j].rgbtRed = round ( (float) sumR/count);
                 }
                 else
                 {
                     for (int s = height-2; s < height; s++)
                     {
                         for (int k = j-1; k < j+2; k++)
-                        {
-                            sumG+= image[s][k].rgbtGreen;
-                            sumR+= image[s][k].rgbtRed;
-                            sumB+= image[s][k].rgbtBlue;
+                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            {   sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+=1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
                     }
-                image[height-1][j].rgbtGreen = round ( (float) sumG/6);
-                image[height-1][j].rgbtBlue = round ( (float) sumB/6);
-                image[height-1][j].rgbtRed = round ( (float) sumR/6);
+                image[height-1][j].rgbtGreen = round ( (float) sumG/count);
+                image[height-1][j].rgbtBlue = round ( (float) sumB/count);
+                image[height-1][j].rgbtRed = round ( (float) sumR/count);
                 }
             }
             else if ((j == 0) || (j == width-1))
             {   int sumG = 0;
                 int sumR = 0;
                 int sumB = 0;
+                int count = 0;
 
                 if (j == 0)
                 {
                     for ( int s = i-1; s < i+1; s++)
                     {
                         for (int k = 0; k < 2; k++)
-                        {
-                            sumG+= image[s][k].rgbtGreen;
-                            sumR+= image[s][k].rgbtRed;
-                            sumB+= image[s][k].rgbtBlue;
+                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            {   sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
                     }
-                image[i][0].rgbtGreen = round ( (float) sumG/6);
-                image[i][0].rgbtBlue = round ( (float) sumB/6);
-                image[i][0].rgbtRed = round ( (float) sumR/6);
+                image[i][0].rgbtGreen = round ( (float) sumG/count);
+                image[i][0].rgbtBlue = round ( (float) sumB/count);
+                image[i][0].rgbtRed = round ( (float) sumR/count);
                 }
                 else
                 {
                     for (int s = i-1; s < i+1; s++)
                     {
                         for (int k = width-2; k < width; k++)
-                        {
-                            sumG+= image[s][k].rgbtGreen;
-                            sumR+= image[s][k].rgbtRed;
-                            sumB+= image[s][k].rgbtBlue;
+                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            {   sumG+= image[s][k].rgbtGreen;
+                                sumR+= image[s][k].rgbtRed;
+                                sumB+= image[s][k].rgbtBlue;
+                                count+= 1;
+                            }
                         }
+                image[i][width-1].rgbtGreen = round ( (float) sumG/count);
+                image[i][width-1].rgbtBlue = round ( (float) sumB/count);
+                image[i][width-1].rgbtRed = round ( (float) sumR/count);
                     }
-                image[i][width-1].rgbtGreen = round ( (float) sumG/6);
-                image[i][width-1].rgbtBlue = round ( (float) sumB/6);
-                image[i][width-1].rgbtRed = round ( (float) sumR/6);
                 }
             }
             else
@@ -186,6 +280,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
+
+
+
+
+
+
 
 
 
