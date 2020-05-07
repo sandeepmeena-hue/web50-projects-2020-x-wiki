@@ -125,7 +125,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         for (int k = 0; k < 2; k++)
                         {
-                            if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                             {
                                 sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
@@ -148,7 +148,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     {
                         for (int k = width-2; k < width; k++)
                         {
-                            if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                            if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                             {
                                 sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
@@ -177,7 +177,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     for (int s = 0; s<2; s++)
                     {
                         for (int k = m-1; k < m+2; k++)
-                        {    if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                        {    if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                              {
                                 sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
@@ -199,7 +199,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     for (int s = height-2; s < height; s++)
                     {
                         for (int k = m-1; k < m+2; k++)
-                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                        {   if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                             {   sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
                                 sumB+= image[s][k].rgbtBlue;
@@ -227,7 +227,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     for ( int s = n-1; s < n+2; s++)
                     {
                         for (int k = 0; k < 2; k++)
-                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                        {   if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                             {   sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
                                 sumB+= image[s][k].rgbtBlue;
@@ -248,7 +248,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     for (int s = n-1; s < n+2; s++)
                     {
                         for (int k = width-2; k < width; k++)
-                        {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                        {   if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                             {   sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
                                 sumB+= image[s][k].rgbtBlue;
@@ -269,7 +269,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int s = n-1; s < n+2; s++)
                 {
                     for (int k = m-1; k < m+2; k++)
-                    {   if (((s < height) && (k < width)) && ((s > 0) && (k > 0)))
+                    {   if (((s < height) && (k < width)) && ((s >= 0) && (k >= 0)))
                         {    sumG+= image[s][k].rgbtGreen;
                              sumR+= image[s][k].rgbtRed;
                              sumB+= image[s][k].rgbtBlue;
