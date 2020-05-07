@@ -84,12 +84,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int sumB = 0;
             int sumb = 0;
 
-            for (int s = i-1; s < i+2; s++)
-            for (int c = 0; c < 3; c++)
+            for (int s = i-1, c = 0; (s < i+2) && (c < 3); s++, c++)
             {
-                for (int k = j-1; k < j+2; k++)
-                for (int d = 0; d < 3; d++)
-                {   if ((s < height) && (s >= 0) && (k < width) && (k >=0))
+                for (int k = j-1, d = 0; (k < j+2) && (d < 3); k++, d++)
+                {   
+                    if ((s < height) && (s >= 0) && (k < width) && (k >=0))
                     {   sumG += image[s][k].rgbtGreen * Gx[c][d];
                         sumg += image[s][k].rgbtGreen * Gy[c][d];
                         sumR += image[s][k].rgbtRed * Gx[c][d];
