@@ -203,7 +203,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             {   sumG+= image[s][k].rgbtGreen;
                                 sumR+= image[s][k].rgbtRed;
                                 sumB+= image[s][k].rgbtBlue;
-                                count+=1;
+                                count+= 1;
                             }
                             else
                             {
