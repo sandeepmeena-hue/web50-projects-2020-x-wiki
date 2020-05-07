@@ -190,9 +190,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                              }
                         }
                     }
-                image[0][m].rgbtGreen = round ( (float)sumG /count) -11;
-                image[0][m].rgbtBlue = round ( (float)sumB /count) -11;
-                image[0][m].rgbtRed = round ( (float)sumR /count) -10;
+                image[0][m].rgbtGreen = round ( (float)sumG /count);
+                image[0][m].rgbtBlue = round ( (float)sumB /count);
+                image[0][m].rgbtRed = round ( (float)sumR /count);
                 }
                 else
                 {
@@ -211,9 +211,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             }
                         }
                     }
-                image[height-1][m].rgbtGreen = round ( (float)sumG /count) -11;
-                image[height-1][m].rgbtBlue = round ( (float)sumB /count) -11;
-                image[height-1][m].rgbtRed = round ( (float)sumR /count) -10;
+                image[height-1][m].rgbtGreen = round ( (float)sumG /count);
+                image[height-1][m].rgbtBlue = round ( (float)sumB /count);
+                image[height-1][m].rgbtRed = round ( (float)sumR /count);
                 }
             }
             else if ((j == 0) || (j == width-1))
@@ -239,9 +239,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             }
                         }
                     }
-                image[n][0].rgbtGreen = round ( (float)sumG /count) -11;
-                image[n][0].rgbtBlue = round ( (float)sumB /count) -11;
-                image[n][0].rgbtRed = round ( (float)sumR /count) -10;
+                image[n][0].rgbtGreen = round ( (float)sumG /count);
+                image[n][0].rgbtBlue = round ( (float)sumB /count);
+                image[n][0].rgbtRed = round ( (float)sumR /count);
                 }
                 else
                 {
@@ -255,9 +255,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                 count+= 1;
                             }
                         }
-                image[n][width-1].rgbtGreen = round ( (float)sumG /count) -11;
-                image[n][width-1].rgbtBlue = round ( (float)sumB /count) -11;
-                image[n][width-1].rgbtRed = round ( (float)sumR /count) -10;
+                image[n][width-1].rgbtGreen = round ( (float)sumG /count);
+                image[n][width-1].rgbtBlue = round ( (float)sumB /count);
+                image[n][width-1].rgbtRed = round ( (float)sumR /count);
                     }
                 }
             }
@@ -281,9 +281,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         }
                     }
                 }
-                image[i][j].rgbtGreen = round ( (float)sumG /count) -17;
-                image[i][j].rgbtBlue = round ( (float)sumB /count) -17;
-                image[i][j].rgbtRed = round ( (float)sumR /count) -16;
+                image[i][j].rgbtGreen = round ( (float)sumG /count);
+                image[i][j].rgbtBlue = round ( (float)sumB /count);
+                image[i][j].rgbtRed = round ( (float)sumR /count);
             }
         }
     }
