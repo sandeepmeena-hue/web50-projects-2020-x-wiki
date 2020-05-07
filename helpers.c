@@ -190,9 +190,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                              }
                         }
                     }
-                image[0][j].rgbtGreen = round ( (float) sumG/count);
-                image[0][j].rgbtBlue = round ( (float) sumB/count);
-                image[0][j].rgbtRed = round ( (float) sumR/count);
+                image[0][m].rgbtGreen = round ( (float) sumG/count);
+                image[0][m].rgbtBlue = round ( (float) sumB/count);
+                image[0][m].rgbtRed = round ( (float) sumR/count);
                 }
                 else
                 {
@@ -211,9 +211,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             }
                         }
                     }
-                image[height-1][j].rgbtGreen = round ( (float) sumG/count);
-                image[height-1][j].rgbtBlue = round ( (float) sumB/count);
-                image[height-1][j].rgbtRed = round ( (float) sumR/count);
+                image[height-1][m].rgbtGreen = round ( (float) sumG/count);
+                image[height-1][m].rgbtBlue = round ( (float) sumB/count);
+                image[height-1][m].rgbtRed = round ( (float) sumR/count);
                 }
             }
             else if ((j == 0) || (j == width-1))
@@ -239,9 +239,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                             }
                         }
                     }
-                image[i][0].rgbtGreen = round ( (float) sumG/count);
-                image[i][0].rgbtBlue = round ( (float) sumB/count);
-                image[i][0].rgbtRed = round ( (float) sumR/count);
+                image[n][0].rgbtGreen = round ( (float) sumG/count);
+                image[n][0].rgbtBlue = round ( (float) sumB/count);
+                image[n][0].rgbtRed = round ( (float) sumR/count);
                 }
                 else
                 {
@@ -255,9 +255,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                 count+= 1;
                             }
                         }
-                image[i][width-1].rgbtGreen = round ( (float) sumG/count);
-                image[i][width-1].rgbtBlue = round ( (float) sumB/count);
-                image[i][width-1].rgbtRed = round ( (float) sumR/count);
+                image[n][width-1].rgbtGreen = round ( (float) sumG/count);
+                image[n][width-1].rgbtBlue = round ( (float) sumB/count);
+                image[n][width-1].rgbtRed = round ( (float) sumR/count);
                     }
                 }
             }
