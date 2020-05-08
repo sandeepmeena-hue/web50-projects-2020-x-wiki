@@ -53,12 +53,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         sumB += image[s][k].rgbtBlue;
                         count += 1;
                     }
-                    else
-                    {
-                        sumG += 0;
-                        sumR += 0;
-                        sumB += 0;
-                    }
                 }
             }
             image[i][j].rgbtGreen = round((float)sumG / count);
@@ -87,7 +81,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             for (int s = i-1, c = 0; (s < i+2) && (c < 3); s++, c++)
             {
                 for (int k = j-1, d = 0; (k < j+2) && (d < 3); k++, d++)
-                {   
+                {
                     if ((s < height) && (s >= 0) && (k < width) && (k >=0))
                     {   sumG += image[s][k].rgbtGreen * Gx[c][d];
                         sumg += image[s][k].rgbtGreen * Gy[c][d];
@@ -95,15 +89,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         sumr += image[s][k].rgbtRed * Gy[c][d];
                         sumB += image[s][k].rgbtBlue * Gx[c][d];
                         sumb += image[s][k].rgbtBlue * Gy[c][d];
-                    }
-                    else
-                    {
-                        sumG += 0;
-                        sumg += 0;
-                        sumR += 0;
-                        sumr += 0;
-                        sumB += 0;
-                        sumb += 0;
                     }
                 }
             }
