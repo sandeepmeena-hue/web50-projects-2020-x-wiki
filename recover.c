@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         int count = 0;
         char *filename;
         FILE *outptr;
-        int *byte = calloc(10000,512);
+        int *byte = calloc(1000000,512);
 
         while(fread(byte,512,1,inptr) != EOF)
         {
