@@ -19,39 +19,42 @@ int main(int argc, char *argv[])
             fprintf(stderr, "Could not open %s.\n", argv[1]);
             return 1;
         }
-        else
-        {   int count = 0;
-            char *filename;
-            FILE *outptr;
-            unsigned int byte[512];
-            int n = fread (byte,512,1,inptr);
-            for (int i = 0; i < n; i++)
+        int count = 0;
+        char *filename;
+        FILE *outptr;
+        int *byte = calloc(10000,512);
+
+        while(fread(byte,512,1,inptr) != EOF)
+        {
+            if ((byte[0] == 0xff) && (byte[1] == 0xd8) && (byte[2] == 0xff) && ((byte[3] & 0xf0) == 0xe0))
             {
-                fread(byte,512,1,inptr);
-                if ((byte[0] == 0xff) && (byte[1] == 0xd8) && (byte[2] == 0xff) && ((byte[3] & 0xf0) == 0xe0))
+                if (count == 0)
                 {
-                    if (count == 0)
-                    {
-                        filename = "000.jpg";
-                        outptr = fopen(filename,"w");
-                        fwrite(byte,512,1,outptr);
-                        count +=1;
-                    }
-                    else
-                    {
-                        fclose(outptr);
-                        sprintf(filename,"%03i.jpg",count);
-                        count += 1;
-                        outptr = fopen(filename,"w");
-                        fwrite (byte,512,1,outptr);
-                    }
+                    filename = "000.jpg";
+                    outptr = fopen(filename,"w");
+                    fwrite(byte,512,1,outptr);
+                    count +=1;
                 }
                 else
+                {
+                    fclose(outptr);
+                    sprintf(filename,"%03i.jpg",count);
+                    count += 1;
+                    outptr = fopen(filename,"w");
+                    fwrite (byte,512,1,outptr);
+                }
+            }
+            else
+            {
+                if (count != 0)
                 {
                     fwrite (byte,512,1,outptr);
                 }
             }
         }
+        free(byte);
+        fclose(inptr);
     }
 }
+
 
