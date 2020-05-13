@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
         FILE *outptr;
         int *byte = calloc(1000000,512);
 
-        while(fread(byte,512,1,inptr) != NULL)
+        while(fread(byte,512,1,inptr) != EOF)
         {
             if ((byte[0] == 0xff) && (byte[1] == 0xd8) && (byte[2] == 0xff) && ((byte[3] & 0xf0) == 0xe0))
             {
