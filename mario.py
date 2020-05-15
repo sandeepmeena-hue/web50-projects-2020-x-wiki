@@ -18,14 +18,12 @@ def pattern(n):
                 print("#",end="")
             else:
                 print(" ",end="")
-                
+
         print("  ",end="")
-        
+
         for k in range(n):
             if i >= k:
                 print("#",end="")
-            else:
-                print(" ",end="")
         print()
 
 main()
