@@ -26,7 +26,7 @@ def calcwls(s):
     if g < 1:
         print("Before Grade 1")
     elif g > 16:
-        print("After Grade 16")
+        print("Grade 16+")
     else:
         print(f"Grade {g}")
 
