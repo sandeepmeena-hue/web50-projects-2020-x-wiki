@@ -11,7 +11,7 @@ db = cs50.SQL("sqlite:///students.db")
 
 db.execute("CREATE TABLE students(first VARCHAR(255), middle VARCHAR(255), last VARCHAR(255), house VARCHAR(10), birth INTEGER)")
 
-with open("characters.csv","r") as table:
+with open("students.csv","r") as table:
 
     reader = csv.DictReader(table)
 
