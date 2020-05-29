@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <script>
+            function blink()
+            {
+                let div = document.querySelector('div.main h');
+                if (div.style.visibility === 'hidden')
+                {
+                    div.style.visibility = 'visible';
+                }
+                else
+                {
+                    div.style.visibility = 'hidden';
+                }
+            }
+            window.setInterval(blink, 500);
+        </script>
+    </head>
+    <body>
+        <div class="main">
+            <h>welcome to my webpage</h>
+        </div>
+        <h><b>Travel From Childhood To Adult<b></h>
+        <h1>Page 1</h1>
+        <div class="alert alert-primary" role="alert">
+            In this page I will talk about first phase of my life.I born in rajasthan, jaipur on 22 octomber 2001..............<a href="page1.html" class="alert-link">Go to Page 1</a>
+        </div>
+        <h1>Page 2</h1>
+        <div class="alert alert-secondary" role="alert">
+            Hello to my second webpage.In this I tell you about my favorite phase of life................<a href="page2.html" class="alert-link">Go To Page 2</a>
+        </div>
+        <h1>Page 3</h1>
+        <div class="alert alert-warning" role="alert">
+            This page cover my first year of college...................<a href="page3.html" target="_blank">Go To Page 3</a>
+        </div>
+    </body>
+</html>

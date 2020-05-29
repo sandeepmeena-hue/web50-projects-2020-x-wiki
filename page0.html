@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            My webpage
+        </title>
+        <style>
+            body
+            {
+                font-size: 50px;
+                background-color: black;
+                text-align: center;
+                position: relative;
+                top: 300px;
+                color: white;
+
+            }
+        </style>
+        <script>
+            function greet()
+            {
+                let name = document.querySelector('#name').value;
+                document.querySelector('#welcome').innerHTML = 'hello ' + name;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="greet();" action="index.html">
+        <label for="name"><b>Name<b></label>
+        <input type="text" id="name">
+        <input type="submit">
+        <p id="welcome"></p>
+        </form>
+    </body>

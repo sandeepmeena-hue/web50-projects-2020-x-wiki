@@ -1,0 +1,19 @@
+
+div.main
+{
+    background-color: pink;
+    width: 1000px;
+    height: 300px;
+    border: 30px powderblue;
+    margin: auto;
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 100px 100px 100px red;
+    font-style: italic ;
+
+}
+body
+{
+    background-color: black;
+    color: white;
+}
