@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <form action="/sell" method="post">
+    <input name="symbol" type="text" placeholder="symbol">
+    <br>
+    <br>
+    <input type = "number" min="1" name="shares" placeholder="shares">
+    <br>
+    <br>
+    <button class="btn btn-primary" name="submit" type="submit">Sell</button>
+    </form>
+
+{% endblock %}
