@@ -1,0 +1,34 @@
+$color: orange;
+$color1: pink;
+$color2: black;
+h1{
+  text-align: center;
+  font-style: italic;
+  font-size: 60px;
+  color: $color;
+}
+div .grid{
+  top: 100px;
+  td::selection{
+    color: red;
+    background-color: yellow;
+  }
+  thead{
+    text-align: center;
+    color: purple;
+    font-size: 30px;
+  }
+  th{
+    color: $color2;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .fav{
+    color: $color;
+    font-size: 30px;
+  }
+  td{
+    color: $color1;
+    font-size: 20px;
+  }
+}

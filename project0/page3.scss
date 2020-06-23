@@ -1,0 +1,53 @@
+$color: red;
+%message{
+  color: $color;
+}
+a:hover{
+  @extend %message;
+  background-color: orange;
+}
+body{
+  background-color: black;
+}
+@media (min-width: 500px ){
+  h1::before{
+    content: "Life in Corona Period";
+    color: pink;
+
+  }
+}
+@media (max-width: 499px){
+  h1::before{
+    content: "Corona Period";
+    color: pink;
+  }
+}
+ul > li
+{
+  color: purple;
+  font-size: 30px;
+}
+ol{
+  color: $color;
+  font-size: 20px;
+}
+.image1{
+  width: 400px;
+  float: left;
+}
+.image2{
+  width: 400px;
+  float: right;
+}
+.col{
+  text-align: center;
+  width: 200px;
+  border: 2px solid white;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+}
+a{
+  color: $color;
+}
