@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% if y != "yes"  %}
+    {% if rows[0]["purtype"] == "bought" %}
+        <div class="alert alert-primary" role="alert">
+          Bought!
+        </div>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+          Sold!
+        </div>
+    {% endif %}
+
+{%  else %}
+     <div class="alert alert-warning" role="alert">
+          Registered!
+        </div>
+{%  endif %}
+
+    <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if y!= "yes"  %}
+    <tr>
+        <th scope="row"></th>
+        <td>{{ rows[0]["symbol"] }}</td>
+        <td>{{ name }}</td>
+        <td>{{ rows[0]["share"] }}</td>
+        <td>${{ rows[0]["price"] }}</td>
+        <td>${{ cost }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+        <th scope="row"></th>
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        {%  if y != "yes" %}
+        <td>${{ rows[0]["cash"] }}</td>
+        {%  else %}
+         <td>${{ total }}</td>
+         {% endif %}
+    </tr>
+    <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>${{ total }}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

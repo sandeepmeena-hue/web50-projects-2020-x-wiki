@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/buy" method="post">
+    <input name="symbol" type="text" placeholder="symbol">
+    <br>
+    <br>
+    <input name="share" type="number" min="1"  placeholder="share">
+    <br>
+    <br>
+    <button class="btn btn-primary" name="submit" type="submit">buy</button>
+    </form>
+{% endblock %}
