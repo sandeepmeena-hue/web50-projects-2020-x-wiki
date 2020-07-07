@@ -1,0 +1,104 @@
+#google
+{
+  font-size: 60px;
+  position: relative;
+  top: -40px;
+  letter-spacing: -7px;
+}
+#search
+{
+  font-size: 25px;
+  color: red;
+  position: relative;
+  top: -60px;
+  left: 30px;
+}
+#heading
+{
+  font-size: 20px;
+  position: relative;
+  top: -20px;
+  left: 30px;
+}
+.text1
+{
+  position: relative;
+  left: 30px;
+  font-weight: lighter;
+}
+.text2
+{
+  position: relative;
+  left: 30px;
+  top: -30px;
+  font-weight: lighter;
+}
+.text3
+{
+  position: relative;
+  left: 30px;
+  top: -60px;
+  font-weight: lighter;
+}
+.text4
+{
+  position: relative;
+  left: 30px;
+  top: -100px;
+  font-weight: lighter;
+
+}
+.box1
+{
+  position: relative;
+  left: 250px;
+  top: -40px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+.box2
+{
+  position: relative;
+  left: 250px;
+  top: -70px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+.box3
+{
+  position: relative;
+  left: 250px;
+  top: -100px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+.box4
+{
+  position: relative;
+  left: 250px;
+  top: -140px;
+  width: 500px;
+  height: 30px;
+  font-size: 20px;
+}
+.button
+{
+  background-color: blue;
+  color: white;
+  border: 1px blue;
+  height: 40px;
+  width: 150px;
+  position: relative;
+  left: -120px;
+  top: -50px;
+}
+.link
+{
+  float: right;
+  font-size: 20px;
+  position: relative;
+  top:20px;
+}
