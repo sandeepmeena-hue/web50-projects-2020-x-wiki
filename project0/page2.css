@@ -1,0 +1,39 @@
+body h1{
+  text-align: center;
+  font-size: 50px;
+  color: red;
+}
+#welcome:hover{
+  background-color: pink;
+}
+#page1:hover{
+  background-color: yellow;
+}
+#page2:hover{
+  background-color: powderblue;
+}
+.college{
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 40px;
+  color: blue;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+p::selection{
+  color: red;
+  background-color: yellow;
+}
+.col a::before{
+  content:"\21d2";
+  font-weight: bold;
+  color: green;
+}
+.col a{
+  font-size: 40px;
+  color: purple;
+}
+.col a:hover{
+  font-size: 50px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Google Search</title>
+    <link rel="stylesheet" href="googlesearch.css">
+  </head>
+  <body>
+    <div class="link">
+      <a href="Gooimgsea.html">Image Search</a>
+      <br>
+      <a href="Gooadvsea.html">Advanced Search</a>
+    </div>
+    <p>
+      <span style='color: blue'>G</span>
+      <span style='color: red'>o</span>
+      <span style='color: yellow'>o</span>
+      <span style='color: blue'>g</span>
+      <span style='color: green'>l</span>
+      <span style='color: red'>e</span>
+    </p>
+    <div>
+      <form name="f" action="http://www.google.com/search">
+        <input type="text" id="text" name="q">
+        <br>
+        <br>
+        <input type="submit" class="click" value="Google Search" placeholder="Google Search">
+      </form>
+    </div>
+    <div>
+      <form name="g" action="http://www.google.com/search">
+        <input type="hidden" name="q" value="">
+        <input type="submit" name="btnI" class="click1" value="I'm Feeling Lucky" placeholder="I'm Feeling Lucky" onclick="document.g.q.value=document.f.q.value;"/>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+  font-style: italic;
+  font-size: 60px;
+  color: orange; }
+
+div {
+  top: 100px; }
+  div td::selection {
+    color: red;
+    background-color: yellow; }
+  div table {
+    display: flex;
+    flex-wrap: wrap; }
+  div thead {
+    text-align: center;
+    color: purple;
+    font-size: 30px; }
+  div th {
+    color: black;
+    font-size: 40px;
+    font-weight: bold; }
+  div .fav {
+    color: orange;
+    font-size: 30px; }
+  div td {
+    color: pink;
+    font-size: 20px; }
+
+/*# sourceMappingURL=page1.css.map */
