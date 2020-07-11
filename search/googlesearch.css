@@ -1,0 +1,45 @@
+body
+{
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+p
+{
+  font-size: 100px;
+  position: relative;
+  top: 80px;
+  left: 70px;
+  letter-spacing: -10px;
+}
+#text
+{
+  font-size: 20px;
+  border-radius: 50px;
+  width: 600px;
+  height: 40px;
+}
+.click
+{
+  height: 35px;
+  border: 1px white;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  left: -70px;
+}
+.click1
+{
+  height: 35px;
+  border: 1px white;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  left: 60px;
+  top: -55px;
+}
+.link
+{
+  float: right;
+  font-size: 20px;
+}

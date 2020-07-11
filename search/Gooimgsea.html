@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Google Image search</title>
+    <style>
+      body{
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      p
+      {
+        font-size: 100px;
+        position: relative;
+        top: 130px;
+        left: 50px;
+        letter-spacing: -10px;
+      }
+      #text
+      {
+        font-size: 20px;
+        border-radius: 50px;
+        width: 600px;
+        height: 40px;
+      }
+      .click
+      {
+        height: 35px;
+        border: 1px white;
+        padding: 10px;
+        margin: 10px;
+      }
+      h1{
+        color: blue;
+        position: relative;
+        left: 110px;
+      }
+      .link
+      {
+        float: right;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="link">
+      <a href="googlesearch.html">Google Search</a>
+      <br>
+      <a href="Gooadvsea.html">Advanced Search</a>
+    </div>
+    <p>
+      <span style='color: blue'>G</span>
+      <span style='color: red'>o</span>
+      <span style='color: yellow'>o</span>
+      <span style='color: blue'>g</span>
+      <span style='color: green'>l</span>
+      <span style='color: red'>e</span>
+    </p>
+    <h1>images</h1>
+    <div>
+      <form action="http://images.google.com/images?um=1&hl=en&safe=active&nfpr=1">
+        <input type="text" id="text" name="q">
+        <br>
+        <br>
+        <input type="submit" class="click" value="Google Search" placeholder="Google Search">
+      </form>
+    </div>
+  </body>
+</html>
